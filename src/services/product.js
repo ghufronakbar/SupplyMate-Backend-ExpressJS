@@ -27,6 +27,16 @@ const getProduct = async (req, res) => {
         const product = await prisma.product.findUnique({
             where: {
                 id
+            },
+            include: {
+                inputs: {
+                    orderBy: {
+                        createdAt: "desc"
+                    },
+                    where: {
+                        isDeleted: false
+                    }
+                }
             }
         })
 
