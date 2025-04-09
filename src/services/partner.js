@@ -151,10 +151,10 @@ const deletePartner = async (req, res) => {
     }
 }
 
-router.get("/", verification(["Admin", "Employee"]), getAllPartners)
-router.get("/:id", verification(["Admin", "Employee"]), getPartner)
-router.post("/", verification(["Admin", "Employee"]), createPartner)
-router.put("/:id", verification(["Admin", "Employee"]), editPartner)
-router.delete("/:id", verification(["Admin", "Employee"]), deletePartner)
+router.get("/", verification(["Admin", "Pegawai", "Manager"]), getAllPartners)
+router.get("/:id", verification(["Admin", "Pegawai", "Manager"]), getPartner)
+router.post("/", verification(["Admin", "Pegawai", "Manager"]), createPartner)
+router.put("/:id", verification(["Admin", "Pegawai", "Manager"]), editPartner)
+router.delete("/:id", verification(["Admin", "Pegawai", "Manager"]), deletePartner)
 
 export default router

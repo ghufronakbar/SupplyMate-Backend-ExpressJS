@@ -174,10 +174,10 @@ const editUser = async (req, res) => {
 
 
 
-router.get("/", verification(["Admin", "Employee"]), getAllUsers)
-router.get("/:id", verification(["Admin", "Employee"]), getUser)
-router.post("/", verification(["Admin", "Employee"]), createUser)
-router.put("/:id", verification(["Admin", "Employee"]), editUser)
-router.delete("/:id", verification(["Admin", "Employee"]), deleteUser)
+router.get("/", verification(["Admin", "Pegawai", "Manager"]), getAllUsers)
+router.get("/:id", verification(["Admin", "Pegawai", "Manager"]), getUser)
+router.post("/", verification(["Admin", "Pegawai", "Manager"]), createUser)
+router.put("/:id", verification(["Admin", "Pegawai", "Manager"]), editUser)
+router.delete("/:id", verification(["Admin", "Pegawai", "Manager"]), deleteUser)
 
 export default router

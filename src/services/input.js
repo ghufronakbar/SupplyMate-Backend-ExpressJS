@@ -208,10 +208,10 @@ const deleteInput = async (req, res) => {
 }
 
 
-router.get("/", verification(["Admin", "Employee"]), getAllInputs)
-router.get("/:id", verification(["Admin", "Employee"]), getInput)
-router.post("/", verification(["Admin", "Employee"]), createInput)
-router.put("/:id", verification(["Admin", "Employee"]), editInput)
-router.delete("/:id", verification(["Admin", "Employee"]), deleteInput)
+router.get("/", verification(["Admin", "Pegawai", "Manager"]), getAllInputs)
+router.get("/:id", verification(["Admin", "Pegawai", "Manager"]), getInput)
+router.post("/", verification(["Admin", "Pegawai", "Manager"]), createInput)
+router.put("/:id", verification(["Admin", "Pegawai", "Manager"]), editInput)
+router.delete("/:id", verification(["Admin", "Pegawai", "Manager"]), deleteInput)
 
 export default router

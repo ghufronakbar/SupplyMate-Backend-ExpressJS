@@ -323,10 +323,10 @@ const cancelOrder = async (req, res) => {
     }
 }
 
-router.get("/", verification(["Admin", "Employee"]), getAllOrders)
-router.get("/:id", verification(["Admin", "Employee"]), getOrder)
-router.post("/", verification(["Admin", "Employee"]), createOrder)
-router.post("/:id/cancel", verification(["Admin", "Employee"]), cancelOrder)
-router.post("/:id/track", verification(["Admin", "Employee"]), trackOrder)
+router.get("/", verification(["Admin", "Pegawai", "Manager"]), getAllOrders)
+router.get("/:id", verification(["Admin", "Pegawai", "Manager"]), getOrder)
+router.post("/", verification(["Admin", "Pegawai", "Manager"]), createOrder)
+router.post("/:id/cancel", verification(["Admin", "Pegawai", "Manager"]), cancelOrder)
+router.post("/:id/track", verification(["Admin", "Pegawai", "Manager"]), trackOrder)
 
 export default router

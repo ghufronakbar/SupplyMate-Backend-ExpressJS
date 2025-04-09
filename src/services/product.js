@@ -161,11 +161,11 @@ const checkByUniqueCode = async (req, res) => {
 }
 
 
-router.get("/", verification(["Admin", "Employee"]), getAllProducts)
-router.get("/:id", verification(["Admin", "Employee"]), getProduct)
-router.get("/:code/code", verification(["Admin", "Employee"]), checkByUniqueCode)
-router.post("/", verification(["Admin", "Employee"]), createProduct)
-router.put("/:id", verification(["Admin", "Employee"]), editProduct)
-router.delete("/:id", verification(["Admin", "Employee"]), deleteProduct)
+router.get("/", verification(["Admin", "Pegawai", "Manager"]), getAllProducts)
+router.get("/:id", verification(["Admin", "Pegawai", "Manager"]), getProduct)
+router.get("/:code/code", verification(["Admin", "Pegawai", "Manager"]), checkByUniqueCode)
+router.post("/", verification(["Admin", "Pegawai", "Manager"]), createProduct)
+router.put("/:id", verification(["Admin", "Pegawai", "Manager"]), editProduct)
+router.delete("/:id", verification(["Admin", "Pegawai", "Manager"]), deleteProduct)
 
 export default router

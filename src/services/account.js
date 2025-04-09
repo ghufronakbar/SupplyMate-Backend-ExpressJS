@@ -61,7 +61,7 @@ const register = async (req, res) => {
         return res.status(400).json({ status: 400, message: 'Harap isi semua field' })
     }
 
-    if (role !== "Admin" && role !== "Employee") {
+    if (role !== "Admin" && role !== "Pegawai" && role !== "Manager") {
         return res.status(400).json({ status: 400, message: 'Role tidak valid' })
     }
 
@@ -225,11 +225,49 @@ const resetPassword = async (req, res) => {
     }
 }
 
+const editRole = async (req, res) => {
+    const { id } = req.params
+    const { role } = req.body
+    if (!role) {
+        return res.status(400).json({ status: 400, message: 'Harap isi semua field' })
+    }
+
+    if (role !== "Admin" && role !== "Manager" && role !== "Pegawai") {
+        return res.status(400).json({ status: 400, message: 'Role tidak valid' })
+    }
+    try {
+        const user = await prisma.user.findUnique({
+            where: {
+                id
+            },
+            select: {
+                role: true
+            }
+        })
+        if (!user) {
+            return res.status(404).json({ status: 404, message: 'Pengguna tidak ditemukan' })
+        }
+        await prisma.user.update({
+            where: {
+                id
+            },
+            data: {
+                role
+            }
+        })
+        return res.status(200).json({ status: 200, message: 'Role berhasil diubah' })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ status: 500, message: 'Terjadi Kesalahan Sistem!' })
+    }
+}
+
 router.post("/login", login)
-router.post("/register", verification(["Admin", "Employee"]), register)
-router.post("/edit-password", verification(["Admin", "Employee"]), editPassword)
+router.post("/register", verification(["Admin", "Pegawai", "Manager"]), register)
+router.post("/edit-password", verification(["Admin", "Pegawai", "Manager"]), editPassword)
 router.post("/reset-password", resetPassword)
-router.get("/", verification(["Admin", "Employee"]), profile)
-router.put("/", verification(["Admin", "Employee"]), editProfile)
+router.get("/", verification(["Admin", "Pegawai", "Manager"]), profile)
+router.put("/", verification(["Admin", "Pegawai", "Manager"]), editProfile)
+router.patch("/:id", verification(["Admin", "Pegawai", "Manager"]), editRole)
 
 export default router
