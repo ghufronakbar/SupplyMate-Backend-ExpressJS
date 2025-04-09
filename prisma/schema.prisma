@@ -109,6 +109,7 @@ model Order {
 model OrderItem {
   id             String  @id @default(uuid())
   quantity       Int
+  uniqueCode     String
   unit           String
   totalBuyPrice  Float
   totalSellPrice Float

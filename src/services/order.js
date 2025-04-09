@@ -152,6 +152,7 @@ const createOrder = async (req, res) => {
             const unit = checkProducts.find(product => product.id === item.productId).unit || "pcs"
             const name = checkProducts.find(product => product.id === item.productId).name || "Produk Tidak Ditemukan"
             const currStock = checkProducts.find(product => product.id === item.productId).stock || 0
+            const uniqueCode = checkProducts.find(product => product.id === item.productId).uniqueCode || "Produk Tidak Ditemukan"
             if (Number(item.quantity) > currStock) {
                 return res.status(400).json({ status: 400, message: 'Stok tidak mencukupi' })
             }
@@ -164,7 +165,8 @@ const createOrder = async (req, res) => {
                 totalSellPrice,
                 image,
                 unit,
-                name
+                name,
+                uniqueCode
             }
         })
 
