@@ -67,7 +67,8 @@ const createInput = async (req, res) => {
             },
             select: {
                 stock: true,
-                id: true
+                id: true,
+                unit: true
             }
         })
 
@@ -81,6 +82,7 @@ const createInput = async (req, res) => {
                     amount: Number(amount),
                     userId,
                     productId,
+                    unit: product.unit
                 },
             }),
             prisma.product.update({

@@ -89,7 +89,8 @@ const createProduct = async (req, res) => {
                 inputs: {
                     create: {
                         amount: Number(stock),
-                        userId
+                        userId,
+                        unit,                        
                     }
                 }
             }
