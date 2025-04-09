@@ -156,10 +156,7 @@ const checkByUniqueCode = async (req, res) => {
         const product = await prisma.product.findUnique({
             where: {
                 uniqueCode: code
-            },
-            select: {
-                id: true
-            }
+            },            
         })
         if (!product || product.isDeleted) {
             return res.status(404).json({ status: 404, message: 'Produk tidak ditemukan!' })
