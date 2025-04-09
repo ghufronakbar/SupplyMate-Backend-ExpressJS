@@ -1,7 +1,7 @@
 {
-  "name": "hypebid-backend",
+  "name": "supplymate",
   "version": "1.0.0",
-  "description": "Backend for HypeBid",
+  "description": "Backend for Supplymate",
   "main": "./src/index.js",
   "type": "module",
   "scripts": {

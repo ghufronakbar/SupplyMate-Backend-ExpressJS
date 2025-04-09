@@ -120,7 +120,7 @@ export const emailTemplate = (name, subject, content, isPassword) =>
     <div class="container">
         <div class="email-content">
             <div class="email-header">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/McDonald%27s_logo.svg/800px-McDonald%27s_logo.svg.png" alt="${APP_NAME}">
+                <img src="https://res.cloudinary.com/dga0wmldp/image/upload/v1744200997/Untitled_design_6_j1t9qc.png" alt="${APP_NAME}">
             </div>
             <div class="email-body">
                 <h1>Halo ${name}!</h1>
