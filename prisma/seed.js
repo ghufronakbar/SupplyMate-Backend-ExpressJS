@@ -125,7 +125,7 @@ const seedProducts = async () => {
                     name: "Beras",
                     buyPrice: 10000,
                     sellPrice: 15000,
-                    unit: "Kg",
+                    unit: "kg",
                     image: "https://kramatlaban-padarincang.desa.id/wp-content/uploads/2023/08/beras.jpg",
                     stock: 10,
                     uniqueCode: "B001"
@@ -134,7 +134,7 @@ const seedProducts = async () => {
                     name: "Gula",
                     buyPrice: 5000,
                     sellPrice: 8000,
-                    unit: "Kg",
+                    unit: "kg",
                     image: "https://asset.kompas.com/crops/uiBT1A4jP_n-jGiIShXIlBJlzQQ=/0x0:1500x1000/1200x800/data/photo/2023/11/12/6550fcbea6729.jpg",
                     stock: 15,
                     uniqueCode: "G001"
@@ -143,7 +143,7 @@ const seedProducts = async () => {
                     name: "Telur",
                     buyPrice: 20000,
                     sellPrice: 30000,
-                    unit: "Kg",
+                    unit: "kg",
                     image: "https://cdn.hellosehat.com/wp-content/uploads/2016/09/risiko-makan-telur.jpg?w=1080&q=100",
                     stock: 50,
                     uniqueCode: "T001"
@@ -152,7 +152,7 @@ const seedProducts = async () => {
                     name: "Minyak Goreng",
                     buyPrice: 15000,
                     sellPrice: 20000,
-                    unit: "Liter",
+                    unit: "liter",
                     image: "https://allofresh.id/blog/wp-content/uploads/2023/08/merek-minyak-goreng-4.jpg",
                     stock: 60,
                     uniqueCode: "M001"
